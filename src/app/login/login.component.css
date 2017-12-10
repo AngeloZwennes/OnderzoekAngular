@@ -22,16 +22,16 @@ after {
     clear: both;
 }
 
-#login {
+#logincontainer {
     position: absolute;
     top: 50%;
     left: 50%;
     margin: -150px 0 0 -150px;
-    width: 320px;
-    height: 300px;
+    width: 330px !important;
+    height: 300px !important;
 }
 
-#login form {
+#logincontainer form {
     margin: auto;
     padding: 22px 22px 22px 22px;
     width: 100%;
@@ -41,7 +41,7 @@ after {
     border-bottom: 3px solid #434a52;
 }
 
-#login form span {
+#logincontainer form span {
     background-color: #363b41;
     border-radius: 3px 0px 0px 3px;
     border-right: 3px solid #434a52;
@@ -54,7 +54,7 @@ after {
     height: 50px;
 }
 
-#login form input[type="text"] {
+#logincontainer form input[type="text"] {
     background-color: #3b4148;
     border-radius: 0px 3px 3px 0px;
     color: #a9a9a9;
@@ -64,7 +64,7 @@ after {
     height: 50px;
 }
 
-#login form input[type="password"] {
+#logincontainer form input[type="password"] {
     background-color: #3b4148;
     border-radius: 0px 3px 3px 0px;
     color: #a9a9a9;

@@ -7,18 +7,24 @@ import {LoginComponent} from './login/login.component';
 import {AppRoutingModule} from './/app-routing.module';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {FormsModule} from '@angular/forms';
+import {SettingsComponent} from './settings/settings.component';
+import {NavbarComponent} from './navbar/navbar.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         LoginComponent,
-        DashboardComponent
+        DashboardComponent,
+        SettingsComponent,
+        NavbarComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        NgbModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent]
