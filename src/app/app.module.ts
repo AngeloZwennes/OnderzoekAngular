@@ -23,6 +23,7 @@ import { CalendarComponent } from './calendar/calendar.component';
         SettingsComponent,
         NavbarComponent,
         CalendarComponent
+
     ],
     entryComponents: [
     ],
