@@ -1,15 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {UserService} from '../user.service';
-
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-    username: string;
-
+    name: string;
+    email: string;
     constructor(private router: Router, private userService: UserService) {
     }
 
@@ -17,7 +16,7 @@ export class LoginComponent implements OnInit {
     }
 
     login() {
-        this.userService.logIn(this.username);
+        this.userService.logIn(this.email);
         this.router.navigateByUrl('/dashboard');
     }
 }

@@ -54,6 +54,16 @@ after {
     height: 50px;
 }
 
+#logincontainer form input[type="email"] {
+    background-color: #3b4148;
+    border-radius: 0px 3px 3px 0px;
+    color: #a9a9a9;
+    margin-bottom: 1em;
+    padding: 0 16px;
+    width: 235px;
+    height: 50px;
+}
+
 #logincontainer form input[type="text"] {
     background-color: #3b4148;
     border-radius: 0px 3px 3px 0px;
@@ -63,6 +73,7 @@ after {
     width: 235px;
     height: 50px;
 }
+
 
 #logincontainer form input[type="password"] {
     background-color: #3b4148;
@@ -88,4 +99,11 @@ after {
 
 .BtnSubmit:hover {
     background: #16aa56;
+}
+
+.emailError {
+    width: 70% !important;
+    color: red !important;
+    margin-bottom: 1em;
+    height: 50px;
 }
