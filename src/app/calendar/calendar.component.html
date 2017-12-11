@@ -1,4 +1,6 @@
-{{ date | date}}
-{{ tempdate | date}} 
-{{ test }}
+{{number}}
+<button (click)="previousNumber()">PREVIOUs</button>
+<button (click)="nextNumber()">NEXT</button>
+<br>
+<input type="date" #Date [value]="date | date:'yyyy-MM-dd'" (input)="date=parseDate($event.target.value)">
 <button (click)="previousDate()" value="Push the button"></button>

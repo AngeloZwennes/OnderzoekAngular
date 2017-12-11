@@ -27,7 +27,8 @@ export class UserService {
     }
 
     createUser() {
-        this.http.get('https://stefanbode.nl/api/user/create.php?username=' + this.name + '&password=test&email=' + this.email).subscribe
+        console.log(this.name);
+        this.http.get('https://stefanbode.nl/api/user/create.php?password=test&email=' + this.email + '&name=' + this.name).subscribe
         (
             data => {
                 this.fetchUserFromDB();
