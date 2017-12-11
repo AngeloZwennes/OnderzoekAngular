@@ -2,26 +2,26 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class UserService {
-    username: string;
+    email: string;
 
     constructor() {
     }
 
     getUser() {
-        return this.username;
+        return this.email;
     }
 
     fetchUser() {
-        this.username = localStorage.getItem('username');
+        this.email = localStorage.getItem('email');
     }
 
-    logIn(username: string) {
-        this.username = username;
-        localStorage.setItem('username', username);
+    logIn(email: string) {
+        this.email = email;
+        localStorage.setItem('email', email);
     }
 
     logOut() {
         localStorage.clear();
-        this.username = undefined;
+        this.email = undefined;
     }
 }

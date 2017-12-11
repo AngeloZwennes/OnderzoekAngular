@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
 import {AppRoutingModule} from './/app-routing.module';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SettingsComponent} from './settings/settings.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -24,6 +24,7 @@ import {UserService} from './user.service';
     imports: [
         BrowserModule,
         AppRoutingModule,
+        ReactiveFormsModule,
         FormsModule,
         NgbModule.forRoot()
     ],

@@ -1,9 +1,15 @@
 <div id="logincontainer">
     <form name='form-login'>
-        <span class="fontawesome-user"></span>
-        <input type="text" id="user" placeholder="Username" name="username" [(ngModel)]="username">
+        <span class="fa fa-envelope-o"></span>
+        <input type="email" email name="emailField" [(ngModel)]="email" #emailField="ngModel" id="user"
+               placeholder="Email">
+        <div *ngIf="emailField.invalid">
+          <span class="emailError" *ngIf="emailField.hasError('email')">
+            Invalid email
+          </span>
+        </div>
 
-        <input class="BtnSubmit" value="Login" (click)="login()">
-
+        <button [disabled]="emailField.hasError('email')" class="BtnSubmit" (click)="login()">Log in</button>
     </form>
+
 </div>
