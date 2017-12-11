@@ -18,4 +18,8 @@ export class NavbarComponent implements OnInit {
     openSettings() {
         this.router.navigateByUrl('/settings');
     }
+
+    goDashboard() {
+        this.router.navigateByUrl('/dashboard');
+    }
 }

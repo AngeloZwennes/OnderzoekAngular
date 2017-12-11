@@ -1,27 +1,29 @@
 import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class UserService {
-    username: string;
+    email: string;
+    private usernameUrl = 'www.stefanbode.nl/api/user';
 
-    constructor() {
+    constructor(private http: HttpClient) {
     }
 
     getUser() {
-        return this.username;
+        return this.email;
     }
 
     fetchUser() {
-        this.username = localStorage.getItem('username');
+        this.email = localStorage.getItem('email');
     }
 
-    logIn(username: string) {
-        this.username = username;
-        localStorage.setItem('username', username);
+    logIn(email: string) {
+        this.email = email;
+        localStorage.setItem('email', email);
     }
 
     logOut() {
         localStorage.clear();
-        this.username = undefined;
+        this.email = undefined;
     }
 }
