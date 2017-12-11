@@ -11,6 +11,7 @@ import {SettingsComponent} from './settings/settings.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {UserService} from './user.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {UserService} from './user.service';
         AppRoutingModule,
         ReactiveFormsModule,
         FormsModule,
+        HttpClientModule,
         NgbModule.forRoot()
     ],
     providers: [UserService],

@@ -1,10 +1,12 @@
 import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class UserService {
     email: string;
+    private usernameUrl = 'www.stefanbode.nl/api/user';
 
-    constructor() {
+    constructor(private http: HttpClient) {
     }
 
     getUser() {
