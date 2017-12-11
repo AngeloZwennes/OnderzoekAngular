@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {UserService} from '../user.service';
 
 @Component({
     selector: 'app-login',
@@ -9,14 +10,14 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
     username: string;
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private userService: UserService) {
     }
 
     ngOnInit() {
     }
 
     login() {
-        localStorage.setItem('username', this.username);
+        this.userService.logIn(this.username);
         this.router.navigateByUrl('/dashboard');
     }
 }

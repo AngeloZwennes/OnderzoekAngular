@@ -1,0 +1,28 @@
+.navbar {
+    background-color: blue;
+    height: 4em;
+    width: 100%;
+}
+
+#settings {
+    float: right;
+    font-size: 3em;
+    color: white;
+    padding: 3px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+#user {
+    float: right;
+    font-size: 3em;
+    color: white;
+    padding: 3px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+#logo {
+    float: left;
+    color: white;
+}
