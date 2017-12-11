@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
     username: any;
 
     ngOnInit() {
-        if (isNullOrUndefined(localStorage.getItem('username'))) {
+        if (isNullOrUndefined(localStorage.getItem('email'))) {
             // there is no username available
             this.router.navigateByUrl('/login');
         } else {
