@@ -10,8 +10,6 @@ import {SettingsComponent} from './settings/settings.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {UserService} from './user.service';
-import {PhotoComponent, PhotoDialog} from './dashboard/photo/photo.component';
-import {PhotoService} from './dashboard/photo/photo.service';
 import {HttpClientModule} from '@angular/common/http';
 import {MatDialogModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -23,11 +21,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         DashboardComponent,
         SettingsComponent,
         NavbarComponent,
-        PhotoComponent,
-        PhotoDialog
     ],
     entryComponents: [
-        PhotoDialog
     ],
     exports: [
         MatDialogModule
@@ -41,7 +36,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         NgbModule.forRoot(),
         HttpClientModule
     ],
-    providers: [UserService, PhotoService],
+    providers: [UserService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
