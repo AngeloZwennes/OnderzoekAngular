@@ -18,8 +18,6 @@ export class CalendarComponent implements OnInit {hmmm
   tempdate: Date;
   previousDate(): void{
     this.date.setDate(this.date.getDate()-1) 
-    this.tempdate = Object.assign({},this.date);
-    this.date = Object.assign({},this.tempdate);
     this.test = this.test -1;
     console.log(this.date);
   }
