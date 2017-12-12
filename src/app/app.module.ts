@@ -16,6 +16,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CalendarComponent } from './calendar/calendar.component';
 import {PhotoComponent, PhotoDialog} from './dashboard/photo/photo.component';
 import {PhotoService} from './photo.service';
+import { TaskComponent, TaskDialog } from './dashboard/task/task.component';
 
 @NgModule({
     declarations: [
@@ -26,10 +27,13 @@ import {PhotoService} from './photo.service';
         NavbarComponent,
         CalendarComponent,
         PhotoComponent,
-        PhotoDialog
+        PhotoDialog,
+        TaskDialog,
+        TaskComponent
     ],
     entryComponents: [
-        PhotoDialog
+        PhotoDialog,
+        TaskDialog
     ],
     exports: [
         MatDialogModule
