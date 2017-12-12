@@ -14,6 +14,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatDialogModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CalendarComponent } from './calendar/calendar.component';
+import {PhotoComponent, PhotoDialog} from './dashboard/photo/photo.component';
+import {PhotoService} from './photo.service';
 
 @NgModule({
     declarations: [
@@ -22,10 +24,12 @@ import { CalendarComponent } from './calendar/calendar.component';
         DashboardComponent,
         SettingsComponent,
         NavbarComponent,
-        CalendarComponent
-
+        CalendarComponent,
+        PhotoComponent,
+        PhotoDialog
     ],
     entryComponents: [
+        PhotoDialog
     ],
     exports: [
         MatDialogModule
@@ -39,7 +43,7 @@ import { CalendarComponent } from './calendar/calendar.component';
         NgbModule.forRoot(),
         HttpClientModule
     ],
-    providers: [UserService],
+    providers: [UserService, PhotoService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
