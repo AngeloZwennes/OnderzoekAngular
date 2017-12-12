@@ -12,7 +12,7 @@ import {HttpClient} from '@angular/common/http';
 export class PhotoComponent implements OnInit {
     photos : Photo[];
     photoUrl = 'https://stefanbode.nl/api/photo';
-    
+
     constructor(private http: HttpClient, public dialog: MatDialog) {
     }
 

@@ -1,9 +1,21 @@
 .navbar {
-    background-color: #452FD2;
-    height: 4em;
+    background-color: #313ccc;
+    height: 70px;
     width: 100%;
 }
 
+
+.navbar h2{
+    width:200px;
+    padding-left:50px;
+    float:left;
+}
+
+
+.navbar .icons{
+    padding-top:10px;
+    padding-right:50px;
+}
 #settings {
     float: right;
     font-size: 3em;
