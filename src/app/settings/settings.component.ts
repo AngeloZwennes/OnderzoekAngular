@@ -8,11 +8,13 @@ import {Router} from '@angular/router';
     styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
-
+    user;
     constructor(private router: Router, private userService: UserService) {
     }
 
     ngOnInit() {
+        this.user = this.userService.fetchUserFromDB();
+        console.log(this.user);
     }
 
     logOut() {

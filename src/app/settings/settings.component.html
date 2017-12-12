@@ -1,4 +1,31 @@
 <app-navbar></app-navbar>
 <div class="container">
-    <button (click)="logOut()">Log out</button>
+    <div>
+        <div class="row">
+            <div class="col-sm-4">Name</div>
+            <div class="col-sm-8">
+                <input [(ngModel)]="user.name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">E-mail</div>
+            <div class="col-sm-8">
+                <input [disabled]="true" [(ngModel)]="user.email">
+            </div>
+        </div>
+        <div *ngIf="user.family_id !== '0'" class="row">
+            <div class="col-sm-4">FAMILY IS AANWEZIG</div>
+        </div>
+        <div *ngIf="user.family_id === '0'" class="row">
+            <div class="col-sm-4">Create a family</div>
+            <div class="col-sm-8">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+                <button (click)="logOut()">Log out</button>
+            </div>
+        </div>
+    </div>
 </div>

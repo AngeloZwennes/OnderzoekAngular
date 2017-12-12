@@ -1,0 +1,39 @@
+.dashboard{
+    background:#f9f9f9;
+    height:100%;
+    width:100%;
+    bottom:0px;
+}
+
+.whitebox{
+    background:#fff;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.toprow{
+    min-height:150px;
+    margin-bottom:50px;
+}
+
+.largebox{
+    min-height:800px;
+    padding:20px;
+}
+.modulesspace{
+    padding-top:40px;
+}
+.bottomrow{
+    min-height:600px;
+}
+
+.box1{
+    padding:20px;
+    color:#fff;
+    background:#29a0d7;
+}
+.box2{
+    padding:20px;
+    color:#fff;
+    background: #59db75;
+}

@@ -1,12 +1,41 @@
-<div style="background-color: #F8F8F8">
-    <app-navbar></app-navbar>
-</div>
+<div class="dashboard">
 
-<div class="container">
-    <div class="col-lg-4">
-    </div>
-    <div class="col-lg-8">
-        <app-calendar></app-calendar>
+    <app-navbar></app-navbar>
+    <div class="container modulesspace">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-6 ">
+                    <div class="box1 toprow">
+                        <app-photo></app-photo>
+                    </div>
+                </div>
+                <div class="col-sm-6" >
+                    <div class="box2 toprow"> vak 2</div>
+
+                </div>
+
+                <div class="col-sm-6 ">
+                    <div class="whitebox bottomrow">
+                        vak 3
+                    </div>
+                </div>
+                <div class="col-sm-6" >
+                    <div class="whitebox bottomrow"><app-task></app-task></div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6 ">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="whitebox largebox">
+                        <app-calendar></app-calendar>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>

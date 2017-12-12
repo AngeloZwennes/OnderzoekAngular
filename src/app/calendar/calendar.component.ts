@@ -7,12 +7,10 @@ import {FormsModule} from '@angular/forms';
   styleUrls: ['./calendar.component.css']
 })
 
+
 export class CalendarComponent implements OnInit {hmmm
   constructor() { }
 
-  ngOnInit() {
-    
-  }
   test: number = 0;
   date: Date = new Date();
   tempdate: Date;
@@ -26,4 +24,25 @@ export class CalendarComponent implements OnInit {hmmm
     this.date.setDate(this.date.getDate() + 1);
   }
 
+    number = 0;
+
+    ngOnInit() {
+
+    }
+
+    previousNumber(): void {
+        this.number--;
+    }
+
+    nextNumber(): void {
+        this.number++;
+    }
+
+    parseDate(dateString: string): Date {
+        if (dateString) {
+            return new Date(dateString);
+        } else {
+            return null;
+        }
+    }
 }
