@@ -15,7 +15,6 @@ import {MatDialogModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CalendarComponent } from './calendar/calendar.component';
 import {PhotoComponent, PhotoDialog} from './dashboard/photo/photo.component';
-import {PhotoService} from './photo.service';
 import { TaskComponent, TaskDialog } from './dashboard/task/task.component';
 
 @NgModule({
@@ -47,7 +46,7 @@ import { TaskComponent, TaskDialog } from './dashboard/task/task.component';
         NgbModule.forRoot(),
         HttpClientModule
     ],
-    providers: [UserService, PhotoService],
+    providers: [UserService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -27,7 +27,6 @@ export class PhotoComponent implements OnInit {
     getPhotos() {
         this.http.get(this.photoUrl + '/read.php').subscribe(data => {
             this.photos = data["records"];
-            console.log(this.photos);
         });
     }
 }

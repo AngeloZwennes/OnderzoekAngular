@@ -1,5 +1,9 @@
 <h2>Task</h2>
 <ul class="list-group">
-  <li class="list-group-item">Iets</li>
+  <li *ngFor="let task of tasks" class="list-group-item clearfix">{{task.task}}
+    <span class="pull-right button-group">
+        <button type="button" class="btn btn-danger" (click)="deleteTask(task.task_id)">Delete</button>
+      </span>
+  </li>
 </ul>
 <button class="btn" mat-button (click)="openDialog()">Add task</button>
