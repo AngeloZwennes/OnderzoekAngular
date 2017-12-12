@@ -1,11 +1,26 @@
-
-<h1>jkasdhjgaskjdgkjg</h1>
-{{ date}}
-
-{{number}}
-<button (click)="previousNumber()">PREVIOUs</button>
-<button (click)="nextNumber()">NEXT</button>
-
-<br>
-<input type="date" #Date [value]="date | date:'yyyy-MM-dd'" (input)="date=parseDate($event.target.value)">
-<button (click)="previousDate()" value="Push the button"></button>
+<div id="skipbar" class="row">
+  <div class="col-sm-4">
+      <span (click)="previousDate()"><i class="fa fa-arrow-left"></i> Yesterday</span>
+  </div>
+  <div class="col-sm-4" style="text-align:center">
+    <span (click)="setToday()">Today</span>
+  </div>
+  <div class="col-sm-4" style="text-align:right">
+      <span (click)="nextDate()">Tommorow <i class="fa fa-arrow-right"></i></span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12" style="text-align:center">
+    <h1>Welcome</h1>
+  </div>  
+</div>
+<div class="row">
+  <div class="col-sm-12" style="text-align:center">
+    <h3> {{ viewAbleDate }}</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12" style="text-align: right">
+    <button class="btn btn-success"><i class="fa fa-plus-circle"></i> Add item</button>
+  </div>
+</div>
