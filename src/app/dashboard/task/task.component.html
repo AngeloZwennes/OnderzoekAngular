@@ -2,7 +2,7 @@
 <ul class="list-group">
   <li *ngFor="let task of tasks" class="list-group-item clearfix">{{task.task}}
     <span class="pull-right button-group">
-        <button type="button" class="btn btn-danger" (click)="deleteTask(task.task_id)">Delete</button>
+        <button type="button" class="btn btn-danger" (click)="deleteTask(task.task_id)"><i class="fa fa-times" aria-hidden="true"></i></button>
       </span>
   </li>
 </ul>
