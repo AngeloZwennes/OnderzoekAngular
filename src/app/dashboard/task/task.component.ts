@@ -51,7 +51,7 @@ export class TaskDialog {
 
     addTask() {
         this.http.get(this.taskUrl + '/create.php?task=' + this.task + '&family_id=1').subscribe(data => {
-              this.dialogRef.close();
+                this.dialogRef.close();
             }
         );
     }
