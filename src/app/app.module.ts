@@ -17,6 +17,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 import {PhotoComponent, PhotoDialog} from './dashboard/photo/photo.component';
 import { TaskComponent, TaskDialog } from './dashboard/task/task.component';
 import { FamilyComponent } from './dashboard/family/family.component';
+import { GroceriesComponent } from './groceries/groceries.component';
+import {GroceryService} from './grocery.service';
 
 @NgModule({
     declarations: [
@@ -30,7 +32,8 @@ import { FamilyComponent } from './dashboard/family/family.component';
         PhotoDialog,
         TaskDialog,
         TaskComponent,
-        FamilyComponent
+        FamilyComponent,
+        GroceriesComponent
     ],
     entryComponents: [
         PhotoDialog,
@@ -48,7 +51,7 @@ import { FamilyComponent } from './dashboard/family/family.component';
         NgbModule.forRoot(),
         HttpClientModule
     ],
-    providers: [UserService],
+    providers: [UserService,GroceryService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
