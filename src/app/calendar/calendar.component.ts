@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {CalendarItem } from '../calendarItem';
+import { UserService } from '../user.service';
+import { CalendarService } from '../calendar.service';
 
 @Component({
   selector: 'app-calendar',
@@ -9,11 +12,13 @@ import {FormsModule} from '@angular/forms';
 
 
 export class CalendarComponent implements OnInit {hmmm
-  constructor() { }
+  constructor(private userService: UserService, private calendarService: CalendarService) { }
 
   test: number = 0;
   date: Date = new Date();
   viewAbleDate: string;
+
+  calenderAgendaItem: CalendarItem = new CalendarItem();
 
   previousDate(): void{
     this.date.setDate(this.date.getDate()-1);
@@ -35,6 +40,7 @@ export class CalendarComponent implements OnInit {hmmm
 
     ngOnInit() {
       this.viewAbleDate = this.date.toDateString();   
+      console.log(this.calendarService.getItemsForUser(this.userService.getUser_id()));
     }
 
     parseDate(dateString: string): Date {
@@ -43,5 +49,13 @@ export class CalendarComponent implements OnInit {hmmm
         } else {
             return null;
         }
+    }
+
+    createCalendarItem(){
+     this.calenderAgendaItem.member = +this.userService.getUser_id();
+     this.calenderAgendaItem.start_date = this.calenderAgendaItem.start.toString().replace(/\T/gi, " ");
+     this.calenderAgendaItem.end_date = this.calenderAgendaItem.end.toString().replace(/\T/gi, " ");     
+     this.calendarService.createAgendaItem(this.calenderAgendaItem);
+     this.calenderAgendaItem = new CalendarItem();
     }
 }

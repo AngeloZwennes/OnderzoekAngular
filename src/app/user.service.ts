@@ -9,16 +9,19 @@ export class UserService {
     name: string;
     user_id: number;
     user;
+    family;
     private usernameUrl = 'www.stefanbode.nl/api/user';
 
     constructor(private http: HttpClient, private router: Router) {
+        this.user = {};
+        this.family = {};
     }
 
     getUser() {
         return this.user;
     }
 
-    getUser_id(){
+    getUser_id() {
         return localStorage.getItem('user_id');
     }
 
@@ -32,7 +35,6 @@ export class UserService {
     }
 
     createUser() {
-        console.log(this.name);
         this.http.get('https://stefanbode.nl/api/user/create.php?password=test&email=' + this.email + '&name=' + this.name).subscribe
         (
             data => {
@@ -59,6 +61,15 @@ export class UserService {
         );
     }
 
+    fetchFamilyFromDB() {
+        this.http.get('http://stefanbode.nl/api/family/read_one.php?family_id=' + this.user.family_id).subscribe
+        (data => {
+                console.log(data);
+                this.family = data;
+            }
+        );
+        return this.family;
+    }
     logIn(email: string, name: string) {
         this.email = email;
         this.name = name;

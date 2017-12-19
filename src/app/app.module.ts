@@ -19,6 +19,7 @@ import { TaskComponent } from './dashboard/task/task.component';
 import { FamilyComponent } from './dashboard/family/family.component';
 import { GroceriesComponent } from './groceries/groceries.component';
 import {GroceryService} from './grocery.service';
+import { CalendarService } from './calendar.service';
 
 @NgModule({
     declarations: [
@@ -45,7 +46,7 @@ import {GroceryService} from './grocery.service';
         NgbModule.forRoot(),
         HttpClientModule
     ],
-    providers: [UserService,GroceryService],
+    providers: [UserService,GroceryService, CalendarService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
