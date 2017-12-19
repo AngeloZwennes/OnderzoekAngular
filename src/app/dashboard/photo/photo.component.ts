@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material';
 import { Photo } from '../../photo';
 import {HttpClient} from '@angular/common/http';
 
