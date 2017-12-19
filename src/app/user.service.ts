@@ -57,7 +57,6 @@ export class UserService {
                 }
             }
         );
-        return this.user;
     }
 
     logIn(email: string, name: string) {

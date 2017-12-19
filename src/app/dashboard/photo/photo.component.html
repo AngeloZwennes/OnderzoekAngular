@@ -10,6 +10,30 @@
       </a>
     </div>
   </div>
+</div>
 
-  <button class="btn" mat-button (click)="openDialog()">Add picture</button>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addPhoto">
+  Add item
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="addPhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add photo</h4>
+      </div>
+      <form (submit)="addTask(task_name)" novalidate>
+        <div class="modal-body">
+          <input type="file" (change)="fileChanged($event)" name="file" accept="image/png">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">save Photo</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

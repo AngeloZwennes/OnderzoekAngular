@@ -16,7 +16,7 @@ export class GroceryService {
 
     getGroceryList(): Observable<GroceryList>{
 
-        let json =  '{"records":[{"id":"1","user_id":"476","groceryItems": [ {"name":"testobject","amount":3}, {"name":"testobject2","amount":3}]}]}';
+        let json =  '{"records":[{"id":"1","user_id":"1","groceryItems": [ {"name":"testobject","amount":3}, {"name":"testobject2","amount":3}]}]}';
         let jsonData = JSON.parse(json);
 
 

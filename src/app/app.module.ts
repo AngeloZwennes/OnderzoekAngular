@@ -15,7 +15,7 @@ import {MatDialogModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CalendarComponent } from './calendar/calendar.component';
 import {PhotoComponent, PhotoDialog} from './dashboard/photo/photo.component';
-import { TaskComponent, TaskDialog } from './dashboard/task/task.component';
+import { TaskComponent } from './dashboard/task/task.component';
 import { FamilyComponent } from './dashboard/family/family.component';
 import { GroceriesComponent } from './groceries/groceries.component';
 import {GroceryService} from './grocery.service';
@@ -29,15 +29,9 @@ import {GroceryService} from './grocery.service';
         NavbarComponent,
         CalendarComponent,
         PhotoComponent,
-        PhotoDialog,
-        TaskDialog,
         TaskComponent,
         FamilyComponent,
         GroceriesComponent
-    ],
-    entryComponents: [
-        PhotoDialog,
-        TaskDialog
     ],
     exports: [
         MatDialogModule
