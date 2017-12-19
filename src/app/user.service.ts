@@ -7,6 +7,7 @@ import {isNull} from 'util';
 export class UserService {
     email: string;
     name: string;
+    user_id: number;
     user;
     private usernameUrl = 'www.stefanbode.nl/api/user';
 
@@ -15,6 +16,10 @@ export class UserService {
 
     getUser() {
         return this.user;
+    }
+
+    getUser_id(){
+        return localStorage.getItem('user_id');
     }
 
     getLocalEmail() {
@@ -46,6 +51,8 @@ export class UserService {
                     this.router.navigateByUrl('/dashboard');
                 } else {
                     // there is a user in the DB, navigate to the dashboard
+                    localStorage.setItem('user_id', this.user.user_id);
+                    this.user_id = this.user.user_id;
                     return this.user;
                 }
             }

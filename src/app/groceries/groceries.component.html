@@ -1,0 +1,41 @@
+<h2>Groceries</h2>
+<table class="table table-striped">
+
+    <tr *ngFor='let item of grocerylists.groceryItemArray'>
+        <td>{{item.name}}</td>
+        <td>{{item.amount}}</td>
+        <td (click)="groceryService.RemoveItem()">[-]</td>
+    </tr>
+</table>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addGrocery">
+   Add item
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="addGrocery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add grocery</h4>
+            </div>
+            <form (submit)="groceryService.addItem(itemname,itemamount)" novalidate>
+            <div class="modal-body">
+
+
+                        <input [(ngModel)]="itemname" mdInput placeholder="add" name="addNewname">
+                        <input [(ngModel)]="itemamount" mdInput placeholder="add" name="addNewamount">
+
+
+
+            </div>
+            <div class="modal-footer">
+
+                <button type="submit" class="btn btn-primary">save Grocery</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
