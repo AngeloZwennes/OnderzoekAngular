@@ -21,8 +21,8 @@ import { CalendarService } from '../calendar.service';
 import {APP_BASE_HREF} from "@angular/common";
 
 describe('CalendarComponent', () => {
-  let component: CalendarComponent;
-  let fixture: ComponentFixture<CalendarComponent>;
+    let component: CalendarComponent;
+    let fixture: ComponentFixture<CalendarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -50,7 +50,7 @@ describe('CalendarComponent', () => {
         providers: [{provide: APP_BASE_HREF, useValue : '/' },UserService,GroceryService, CalendarService]
     })
     .compileComponents();
-  }));
+}));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CalendarComponent);
