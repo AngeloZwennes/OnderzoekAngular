@@ -40,7 +40,7 @@ export class CalendarComponent implements OnInit {hmmm
 
     ngOnInit() {
       this.viewAbleDate = this.date.toDateString();   
-      console.log(this.calenderAgendaItem);
+      console.log(this.calendarService.getItemsForUser(this.userService.getUser_id()));
     }
 
     parseDate(dateString: string): Date {

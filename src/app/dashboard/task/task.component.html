@@ -6,4 +6,28 @@
       </span>
   </li>
 </ul>
-<button class="btn" mat-button (click)="openDialog()">Add task</button>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addTask">
+    Add item
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="addTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add task</h4>
+            </div>
+            <form (submit)="addTask(task_name)" novalidate>
+                <div class="modal-body">
+                    <input [(ngModel)]="task_name" mdInput placeholder="add" name="New task name" class="form-control" >
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">save Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

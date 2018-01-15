@@ -1,5 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { Component, OnInit } from '@angular/core';
 import { Task } from '../../task';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../../user.service';
@@ -11,25 +10,31 @@ import { UserService } from '../../user.service';
 })
 export class TaskComponent implements OnInit {
   tasks : Task[];
-  user;
+  user: {};
   taskUrl = 'https://stefanbode.nl/api/task';
 
-  constructor(private http: HttpClient, public dialog: MatDialog, private userService: UserService) { }
-
-  ngOnInit() {
-    this.getTasks();
-      this.user = this.userService.fetchUserFromDB();
-      console.log(this.user);
+  constructor(private http: HttpClient, private userService: UserService) {
+      this.user = {};
   }
 
-  openDialog() {
-      this.dialog.open(TaskDialog, {});
+  ngOnInit() {
+      this.user = this.userService.getUser();
+      console.log(this.user);
+
+      this.getTasks();
   }
 
   getTasks() {
+      this.tasks = [];
       this.http.get(this.taskUrl + '/read_by_family.php?family_id=1').subscribe(data => {
           this.tasks = data["records"];
       });
+  }
+
+  addTask(task_name: string) {
+    this.http.get(this.taskUrl + '/create.php?task=' + task_name + '&family_id=1').subscribe(data => {
+        this.getTasks();
+    });
   }
 
   deleteTask(taskId: number) {
@@ -37,22 +42,4 @@ export class TaskComponent implements OnInit {
           this.getTasks();
       });
   }
-}
-
-@Component({
-    selector: 'dialog-task',
-    templateUrl: 'task-dialog.html',
-})
-export class TaskDialog {
-    task: string;
-    taskUrl = 'https://stefanbode.nl/api/task';
-
-    constructor(public dialogRef: MatDialogRef<TaskDialog>, private http: HttpClient, @Inject(MAT_DIALOG_DATA) public data: any) {}
-
-    addTask() {
-        this.http.get(this.taskUrl + '/create.php?task=' + this.task + '&family_id=1').subscribe(data => {
-                this.dialogRef.close();
-            }
-        );
-    }
 }

@@ -16,7 +16,11 @@ export class GroceryService {
 
     getGroceryList(): Observable<GroceryList>{
 
+<<<<<<< HEAD
         let json =  '{"records":[{"id":"1","user_id":"475","groceryItems": [ {"name":"testobject","amount":3}, {"name":"testobject2","amount":3}]}]}';
+=======
+        let json =  '{"records":[{"id":"1","user_id":"1","groceryItems": [ {"name":"testobject","amount":3}, {"name":"testobject2","amount":3}]}]}';
+>>>>>>> 3514f33616e3761b8718affab41c852ed7ff8342
         let jsonData = JSON.parse(json);
 
 

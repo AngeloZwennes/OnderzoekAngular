@@ -1,5 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
+import { Component, OnInit } from '@angular/core';
 import { Photo } from '../../photo';
 import {HttpClient} from '@angular/common/http';
 
@@ -13,11 +12,7 @@ export class PhotoComponent implements OnInit {
     photos : Photo[];
     photoUrl = 'https://stefanbode.nl/api/photo';
 
-    constructor(private http: HttpClient, public dialog: MatDialog) {
-    }
-
-    openDialog() {
-        this.dialog.open(PhotoDialog, {});
+    constructor(private http: HttpClient) {
     }
 
     ngOnInit() {
@@ -29,14 +24,6 @@ export class PhotoComponent implements OnInit {
             this.photos = data["records"];
         });
     }
-}
-
-@Component({
-    selector: 'dialog-photo',
-    templateUrl: 'photo-dialog.html',
-})
-export class PhotoDialog {
-    constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 
     fileChanged(e: Event) {
         var target: HTMLInputElement = e.target as HTMLInputElement;
@@ -53,7 +40,7 @@ export class PhotoDialog {
         xhr.upload.addEventListener("progress", (ev: ProgressEvent) => {
             //You can handle progress events here if you want to track upload progress (I used an observable<number> to fire back updates to whomever called this upload)
         });
-        xhr.open("PUT", "assets/images/", true);
+        xhr.open("PUT", "../assets/images/", true);
         xhr.send(formData);
     }
 }
